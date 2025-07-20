@@ -1,0 +1,6 @@
+# To make rust analyzer see all packages
+
+[workspace]
+members = ["day*"]
+
+resolver = "3"
