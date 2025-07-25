@@ -11,13 +11,13 @@ fn main() -> Result<(), Box<dyn Error>>{
         let fline = fline_res?;
         let mut calibration_value = 0;
         for start_char in fline.chars() {
-            if start_char.is_digit(10) {
+            if start_char.is_ascii_digit() {
                 calibration_value += start_char.to_digit(10).unwrap() * 10;
                 break;
             }
         }
         for end_char in fline.chars().rev() {
-            if end_char.is_digit(10) {
+            if end_char.is_ascii_digit() {
                 calibration_value += end_char.to_digit(10).unwrap();
                 break;
             }
